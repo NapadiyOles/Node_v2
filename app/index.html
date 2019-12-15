@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Task2</title>
+	<style>
+		.result{
+			text-align: center;
+		}
+		.container{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+		p, input{
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			text-align: center;
+		}
+	</style>
+	<script>
+		function findValue(obj){
+			var price = 0;
+			if(obj.course1.checked){
+				price += obj.course1.value*obj.duration1.value*obj.lang1.value*obj.report1.value;
+			}
+			if(obj.course2.checked){
+				price += obj.course2.value*obj.duration2.value*obj.lang2.value*obj.report2.value;
+			}
+			if(obj.course3.checked){
+				price += obj.course3.value*obj.duration3.value*obj.lang3.value*obj.report3.value;
+			}
+			if(price==0){
+				document.getElementById("value").innerHTML = 'No course choosen!';
+			}
+			else{
+				document.getElementById("value").innerHTML = 'Education will cost $' + price;
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>Task: Написати сценарій обробки анкети слухача курсів. Користувач може обрати із списку курсів конкретний курс, його тривалість, мову роботи з викладачем, форму звітності. Залежно від цих параметрів визначається вартість окремого курсу і вартість всього навчання.</p>
+	<p>Courses</p>
+	<hr>
+	<form name="form">
+		<div class="container">
+			<div>
+				<p><input type="checkbox" name="course1" value="1000">C++</p>
+				<hr style="width: 100px;">
+				<p>Duration</p>
+				<p>
+					<input type="radio" checked name="duration1" value="1">2 mounth
+					<input type="radio" name="duration1" value="2">4 mounth
+					<input type="radio" name="duration1" value="3">8 mounth
+				</p>
+				<p>Lenguage</p>
+				<p>
+					<input type="radio" checked name="lang1" value="1">Ukrainian
+					<input type="radio" name="lang1" value="1">Russian
+					<input type="radio" name="lang1" value="2">English
+				</p>
+				<p>Reporting form</p>
+				<p>
+					<input type="radio" checked name="report1" value="1">full-time education
+					<input type="radio" name="report1" value="1.5">external education
+				</p>
+			</div>
+			<div>
+					<p><input type="checkbox" name="course2" value="1500">C#</p>
+					<hr style="width: 100px;">
+					<p>Duration</p>
+					<p>
+						<input type="radio" checked name="duration2" value="1">2 mounth
+						<input type="radio" name="duration2" value="2">4 mounth
+						<input type="radio" name="duration2" value="3">8 mounth
+					</p>
+					<p>Lenguage</p>
+					<p>
+						<input type="radio" checked name="lang2" value="1">Ukrainian
+						<input type="radio" name="lang2" value="1">Russian
+						<input type="radio" name="lang2" value="1.5">English
+					</p>
+					<p>Reporting form</p>
+					<p>
+						<input type="radio" checked name="report2" value="1">full-time education
+						<input type="radio" name="report2" value="1.5">external education
+					</p>
+			</div>	
+			<div>
+				<p><input type="checkbox" name="course3" value="2000">JavaScript</p>
+				<hr style="width: 100px;">
+				<p>Duration</p>
+				<p>
+					<input type="radio" checked name="duration3" value="1">2 mounth
+					<input type="radio" name="duration3" value="2">4 mounth
+					<input type="radio" name="duration3" value="3">8 mounth
+				</p>
+				<p>Lenguage</p>
+				<p>
+					<input type="radio" checked name="lang3" value="1">Ukrainian
+					<input type="radio" name="lang3" value="1">Russian
+					<input type="radio" name="lang3" value="1.5">English
+				</p>
+				<p>Reporting form</p>
+				<p>
+					<input type="radio" checked name="report3" value="1">full-time education
+					<input type="radio" name="report3" value="1.5">external education
+				</p>
+			</div>
+		</div>
+		<div class="result">
+			<input type="button" value="Calculate" onClick="findValue(form)">
+			<p id="value"></p>
+		</div>
+	</form>
+</body>
+</html>
