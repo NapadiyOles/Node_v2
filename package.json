@@ -5,15 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha test",
+    "test": "eslint .",
     "your-custom-script": "echo npm",
     "prettier": "prettier --config .prettierrc.json --write src/**/*.js",
     "doc": "esdoc --out docs/src/ --readme ./README.md",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "precommit":"npm run prettier",
+    "precommit": "npm run prettier",
     "prepush": "call npm run lint && call npm run test"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NapadiyOles/Node_v2.git"
@@ -34,7 +33,6 @@
     "conventional-changelog-cli": "^2.0.28",
     "eslint": "^6.7.2",
     "husky": "^3.1.0",
-    "mocha": "^6.2.2",
     "prettier": "^1.19.1"
   }
 }
