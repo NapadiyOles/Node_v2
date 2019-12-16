@@ -1,3 +1,6 @@
+/*global someFunction, a*/
+/*eslint no-undef: "error"*/
+
 const express = require('express')
 const app = express()
 const port = 3000
