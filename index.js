@@ -1,4 +1,4 @@
-/*global __dirname, a*/
+/*global __dirname*/
 
 const express = require('express')
 const app = express()
