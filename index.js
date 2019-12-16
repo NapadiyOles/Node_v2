@@ -1,5 +1,4 @@
-/*global someFunction, a*/
-/*eslint no-undef: "error"*/
+/*global __dirname, a*/
 
 const express = require('express')
 const app = express()
